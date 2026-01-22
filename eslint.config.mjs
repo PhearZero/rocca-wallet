@@ -63,6 +63,7 @@ export default [
       'packages/react-native-attestation/build/',
       'packages/core/lib/',
       'packages/legacy/core/lib',
+      'samples/rocca-wallet/.expo/'
     ],
   },
   {
