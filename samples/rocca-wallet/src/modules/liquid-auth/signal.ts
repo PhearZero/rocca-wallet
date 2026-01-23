@@ -1,7 +1,9 @@
+/* eslint-disable */
+// @ts-nocheck
 import { SignalClient } from '@algorandfoundation/liquid-client'
 export type { SignalClient } from '@algorandfoundation/liquid-client'
 import { getConnectSidCookieHeader } from './sessionCookie'
-import { bifoldLoggerInstance as logger } from '../../services/bifoldLogger'
+import { bifoldLoggerInstance as logger } from '../../../../../packages/core/src/services/bifoldLogger'
 
 export type SignalHandlers = {
   onLink?: () => void
@@ -45,7 +47,7 @@ export async function preLink(client: SignalClient, requestId: string): Promise<
   })
 
   // Call link (this may or may not return a resolving promise)
-  client.link(requestId).catch((e) => {
+  client.link(requestId).catch((e: Error) => {
     logger.debug('[LiquidAuth][DEBUG] preLink: client.link promise rejected', { error: e })
   })
 

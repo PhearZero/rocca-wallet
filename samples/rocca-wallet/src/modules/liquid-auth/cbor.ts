@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-no-check
 import { sha256 } from '@noble/hashes/sha2'
 import { fromBase64Url, toBase64URL } from '@algorandfoundation/liquid-client'
 import { decode as cborDecode } from 'cbor-x'

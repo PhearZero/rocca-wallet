@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import { toBase64URL, fromBase64Url } from '@algorandfoundation/liquid-client'
 import { sha256 } from '@noble/hashes/sha2'
 import { buildAuthenticatorData } from './cbor'

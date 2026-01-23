@@ -25,7 +25,7 @@ const mnemonic = bip39.generateMnemonic(256) // 24 words
 const isValid = bip39.validateMnemonic(mnemonic)
 
 // Convert mnemonic to seed
-const seed = bip39.mnemonicToSeedSync(mnemonic, "") // Empty passphrase
+const seed = bip39.mnemonicToSeedSync(mnemonic, '') // Empty passphrase
 ```
 
 ### 2. HD Wallet API Integration (`@algorandfoundation/xhd-wallet-api`)
@@ -48,7 +48,7 @@ const addressKey = await cryptoService.keyGen(
   BIP32DerivationType.Peikert
 )
 
-// Generate identity key (BIP44 path: m'/44'/0'/account'/0/address_index)  
+// Generate identity key (BIP44 path: m'/44'/0'/account'/0/address_index)
 const identityKey = await cryptoService.keyGen(
   rootKey,
   KeyContext.Identity,
@@ -62,7 +62,7 @@ const identityKey = await cryptoService.keyGen(
 
 ### Basic HD Wallet Service
 
-```typescript
+````typescript
 import { HDWalletService, createHDWallet } from '@bifold/core'
 
 // Create HD wallet from mnemonic
@@ -96,18 +96,20 @@ const hdWallet = new HDWalletService(existingMnemonic)
 
 // Store rootKey for HD operations
 // Use XHDWalletAPI directly for advanced operations
-```
+````
 
 ## Key Derivation Paths
 
 The HD wallet follows BIP44 specification with Algorand-specific paths:
 
 ### Algorand Addresses
+
 - Path: `m'/44'/283'/account'/0/address_index`
 - Context: `KeyContext.Address`
 - Derivation: `BIP32DerivationType.Peikert` (recommended)
 
-### Identity Keys  
+### Identity Keys
+
 - Path: `m'/44'/0'/account'/0/address_index`
 - Context: `KeyContext.Identity`
 - Derivation: `BIP32DerivationType.Peikert` (recommended)
@@ -138,7 +140,7 @@ transformIgnorePatterns: [
 ## Integration Checklist
 
 - [x] Add `@algorandfoundation/xhd-wallet-api` dependency
-- [x] Add `bip39` dependency  
+- [x] Add `bip39` dependency
 - [x] Update Jest transformIgnorePatterns for ES modules
 - [x] Create HD wallet utility classes
 - [x] Add comprehensive tests

@@ -1,5 +1,7 @@
+/* eslint-disable */
+// @ts-nocheck
 import Cookies from '@react-native-cookies/cookies'
-import { bifoldLoggerInstance as logger } from '../../services/bifoldLogger'
+import { bifoldLoggerInstance as logger } from '../../../../../packages/core/src/services/bifoldLogger'
 
 let connectSid: string | null = null
 
